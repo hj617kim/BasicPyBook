@@ -1,0 +1,1279 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. 조건문 &#8212; basic_pybook</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="소개" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">basic_pybook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   소개
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. 조건문
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hj617kim/basic_pybook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hj617kim/basic_pybook/issues/new?title=Issue%20on%20page%20%2Fch7.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hj617kim/basic_pybook/master?urlpath=tree/docs/ch7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if">
+   1.1.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-else">
+   1.2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if-else
+    </span>
+   </code>
+   조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   1.3. 조건부 표현식
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   1.4. 중첩 조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   1.5. 다중 조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   1.6. 요약
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   1.7. 연습 문제
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     1.7.1. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     1.7.2. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     1.7.3. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     1.7.4. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     1.7.5. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     1.7.6. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     1.7.7. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     1.7.8. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     1.7.9. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     1.7.10. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     1.7.11. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     1.7.12. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     1.7.13. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     1.7.14. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     1.7.15. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     1.7.16. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     1.7.17. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     1.7.18. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     1.7.19. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     1.7.20. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     1.7.21. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id28">
+     1.7.22. 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id29">
+   1.8. [미니 프로젝트] 죄수의 딜레마
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id30">
+   1.9. [토이 프로젝트] 가위바위보 게임
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>조건문</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if">
+   1.1.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-else">
+   1.2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if-else
+    </span>
+   </code>
+   조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   1.3. 조건부 표현식
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   1.4. 중첩 조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   1.5. 다중 조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   1.6. 요약
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   1.7. 연습 문제
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     1.7.1. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     1.7.2. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     1.7.3. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     1.7.4. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     1.7.5. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     1.7.6. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     1.7.7. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     1.7.8. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     1.7.9. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     1.7.10. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     1.7.11. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     1.7.12. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     1.7.13. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     1.7.14. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     1.7.15. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     1.7.16. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     1.7.17. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     1.7.18. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     1.7.19. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     1.7.20. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     1.7.21. 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id28">
+     1.7.22. 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id29">
+   1.8. [미니 프로젝트] 죄수의 딜레마
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id30">
+   1.9. [토이 프로젝트] 가위바위보 게임
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><span class="section-number">1. </span>조건문<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="if">
+<h2><span class="section-number">1.1. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> 조건문<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h2>
+<p>조건문<font size="2">conditional statement</font>은 특정 조건의 성립여부에 따라 다른 일을 하게 만드는 명령문이다. <code class="docutils literal notranslate"><span class="pre">if</span></code> 조건문을 사용하면 특정 조건이 참일 때만 어떤 코드가 실행되게 할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건</span> <span class="p">:</span>
+    <span class="n">코드</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code> 키워드로 시작하며 그 뒤에 조건과 콜론(<code class="docutils literal notranslate"><span class="pre">:</span></code>)을 쓰고, 아래로 내려와서 들여쓰기<font size="2">indentation</font>를 한 다음 조건이 참일 때 실행할 코드를 작성한다.</p>
+<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 작다면 <code class="docutils literal notranslate"><span class="pre">x는</span> <span class="pre">음수다</span></code>를 출력하는 코드를 작성해보자.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수다&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>위 조건문이 실행되는 순간 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 0보다 작으면 <code class="docutils literal notranslate"><span class="pre">x는</span> <span class="pre">음수다</span></code>를 출력하고, 그렇지 않으면 다음 명령문으로 넘어간다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수다&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;여기!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x는 음수다
+여기!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수다&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;여기!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>여기!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code> 조건문 뒤에는 반드시 콜론을 사용해야 하고, 조건이 참일 때 실행할 코드는 들여쓰기해야 한다. 그렇지 않으면 문법 오류(<code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>)가 발생한다. 이때 들여쓰기는 공백 4칸을 권장한다.</p>
+</div>
+<div class="info admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">pass</span></code> 명령문  </p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code> 조건이 참일 때 실행할 코드를 작성하지 않으면 오류가 발생한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+  File <span class="nb">&quot;/tmp/ipykernel_1694/3387527309.py&quot;</span>, line <span class="m">1</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+              <span class="p p-Marker">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">unexpected EOF while parsing</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pass</span></code> 는 아무 것도 하지 않고 지나가도록 하는 명령문으로, <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 작을 때 할 일을 다음에 지정하고자 할 때 사용할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="go">        pass</span>
+</pre></div>
+</div>
+</div>
+<div class="proof example admonition" id="cond_ex01">
+<p class="admonition-title"><span class="caption-number">Example 1.1 </span></p>
+<div class="example-content section" id="proof-content">
+<p>변수<code class="docutils literal notranslate"><span class="pre">score</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">score</span></code>가 80이상이면 <code class="docutils literal notranslate"><span class="pre">합격입니다.</span></code>를 출력하는 코드를 작성하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">score</span> <span class="o">=</span> <span class="mi">95</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">:</span>
+<span class="go">        print(&#39;합격입니다.&#39;)</span>
+<span class="go">합격입니다.</span>
+</pre></div>
+</div>
+</div>
+</div><div class="proof example admonition" id="cond_ex02">
+<p class="admonition-title"><span class="caption-number">Example 1.2 </span></p>
+<div class="example-content section" id="proof-content">
+<p>변수 <code class="docutils literal notranslate"><span class="pre">n</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">n</span></code>이 홀수면 <code class="docutils literal notranslate"><span class="pre">n</span></code>의 제곱을 출력하는 코드를 작성하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">:</span>
+<span class="go">        print(n,&#39;의 제곱 :&#39;, n ** 2)</span>
+<span class="go">7 의 제곱 : 49</span>
+</pre></div>
+</div>
+<p>정수 <code class="docutils literal notranslate"><span class="pre">1</span></code>은 <code class="docutils literal notranslate"><span class="pre">True</span></code>라 아래와 같이 코드를 작성할 수도 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">:</span>
+<span class="go">        print(n,&#39;의 제곱 :&#39;, n ** 2)</span>
+<span class="go">7 의 제곱 : 49</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">n</span></code>의 제곱을 계산한 다음 그 결과를 출력할 수도 있다. <code class="docutils literal notranslate"><span class="pre">if</span></code>조건이 참일 때 실행할 여러 줄의 코드는 들여쓰기 깊이가 같아야 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">:</span>
+<span class="go">        result = n ** 2</span>
+<span class="go">        print(n,&#39;의 제곱 :&#39;, result)</span>
+<span class="go">7 의 제곱 : 49</span>
+</pre></div>
+</div>
+</div>
+</div><div class="info admonition">
+<p class="admonition-title">코드 블록<font size="2">code block</font>    </p>
+<p>프로그래밍에서 코드 블록은 특정한 일을 수행하는 한 단위의 코드 묶음을 말한다. 보통 중괄호(<code class="docutils literal notranslate"><span class="pre">{}</span></code>)로 묶여 있는 경우가 많으나 파이썬에서는 들여쓰기로 코드 블록을 지정한다.</p>
+</div>
+<div class="proof example admonition" id="cond_ex03">
+<p class="admonition-title"><span class="caption-number">Example 1.3 </span></p>
+<div class="example-content section" id="proof-content">
+<p>변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 작으면 <code class="docutils literal notranslate"><span class="pre">x는</span> <span class="pre">음수</span></code>, 크거나 같으면 <code class="docutils literal notranslate"><span class="pre">x는</span> <span class="pre">음수</span> <span class="pre">아님</span></code>를 출력하는 코드를 작성하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="go">        print(&#39;x는 음수&#39;)</span>
+<span class="go">x는 음수</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="go">        print(&#39;x는 음수 아님&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="go">        print(&#39;x는 음수&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="go">        print(&#39;x는 음수 아님&#39;)</span>
+<span class="go">x는 음수 아님</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code>는 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>와 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>을 동시에 만족할 수 없지만 <code class="docutils literal notranslate"><span class="pre">if</span></code>문을 두 번 사용했기 때문에 파이썬은 각 조건을 모두 확인한다.</p>
+</div>
+</div></div>
+<div class="section" id="if-else">
+<h2><span class="section-number">1.2. </span><code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문<a class="headerlink" href="#if-else" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문은 조건이 참이면 <code class="docutils literal notranslate"><span class="pre">코드1</span></code>을 실행하고, 거짓이면 <code class="docutils literal notranslate"><span class="pre">코드2</span></code>을 실행한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건</span> <span class="p">:</span>
+    <span class="n">코드1</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">코드2</span>
+</pre></div>
+</div>
+<p>파이썬은 들여쓰기에 민감한 언어다. <code class="docutils literal notranslate"><span class="pre">if</span></code>와 <code class="docutils literal notranslate"><span class="pre">else</span></code>의 들여쓰기 깊이가 같아야 하고, <code class="docutils literal notranslate"><span class="pre">코드1</span></code>과 <code class="docutils literal notranslate"><span class="pre">코드2</span></code>도 들여쓰기 깊이가 같아야 한다.</p>
+<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 작으면 <code class="docutils literal notranslate"><span class="pre">x는</span> <span class="pre">음수</span></code>를 출력하고 크거나 같으면 <code class="docutils literal notranslate"><span class="pre">x는</span> <span class="pre">음수</span> <span class="pre">아님</span></code>를 출력하는 코드를 작성해보자.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수&#39;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수 아님&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>위 조건문은 조건을 한 번만 확인하기 때문에 <a class="reference internal" href="#cond_ex03">Example 1.3</a>에서 <code class="docutils literal notranslate"><span class="pre">if</span></code>문을 두 번 사용한 코드보다 더 효율적으로 동작한다.</p>
+<div class="proof example admonition" id="cond_ex04">
+<p class="admonition-title"><span class="caption-number">Example 1.4 </span></p>
+<div class="example-content section" id="proof-content">
+<p>변수 <code class="docutils literal notranslate"><span class="pre">a</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">a</span></code>의 절댓값을 출력하는 코드를 작성하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="go">        print(a)</span>
+<span class="go">    else :</span>
+<span class="go">        print(-a)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</div>
+</div></div>
+<div class="section" id="id2">
+<h2><span class="section-number">1.3. </span>조건부 표현식<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>조건부 표현식<font size="2">conditional expression</font>은 <code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문을 한 줄로 표현하는 방법으로 형식은 다음과 같다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">조건이</span> <span class="n">참일</span> <span class="n">때</span> <span class="n">실행할</span> <span class="n">코드</span> <span class="k">if</span> <span class="n">조건</span> <span class="k">else</span> <span class="n">조건이</span> <span class="n">거짓일</span> <span class="n">때</span> <span class="n">실행할</span> <span class="n">코드</span>
+</pre></div>
+</div>
+<p>예를 들어, 변수 <code class="docutils literal notranslate"><span class="pre">a</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">a</span></code>의 절댓값을 출력하는 코드를 조건부 표현식으로 작성해보자.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">1.4. </span>중첩 조건문<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문을 중첩해서 사용하면 원하는 대로 경우를 나누어서 처리할 수 있다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">x</span></code>가 <code class="docutils literal notranslate"><span class="pre">y</span></code>보다 큰지 작은지 같은지를 출력하는 코드를 다음과 같이 작성할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 작다&#39;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 크다&#39;</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x와 y가 같다&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>위의 중첩 조건문은 바깥 쪽에 위치한 조건<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code>을 확인한 다음 조건이 거짓일 경우 <code class="docutils literal notranslate"><span class="pre">else</span></code> 아래있는 조건<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code>를 확인한다.</p>
+<div class="info admonition">
+<p class="admonition-title">참고</p>
+<p>중첩 조건문을 사용하면 코드가 금방 복잡해질 수 있기 때문에 일반적으로 권장하지 않는다. 논리 연산자를 사용해 중첩 조건문의 사용을 피할 수 있다. 아래 코드는 중첩 조건문을 사용해 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 크면서 동시에 10보다 작은 경우를 다룬다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 0보다 크고 10보다 작다&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>와 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>을 모두 만족하는 경우에만 실행되기에 아래와 같이 <code class="docutils literal notranslate"><span class="pre">and</span></code> 연산자를 이용하면 조건문을 중첩해 사용할 필요가 없다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 0보다 크고 10보다 작다&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>참고로 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>을 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>로 표현할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 0보다 크고 10보다 작다&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">1.5. </span>다중 조건문<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>다중 조건문을 사용하면 중첩 조건문보다 가독성 높게 세 개 이상의 경우를 다룰 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건1</span> <span class="p">:</span>
+    <span class="n">코드1</span>
+<span class="k">elif</span> <span class="n">조건2</span> <span class="p">:</span>
+    <span class="n">코드2</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">코드3</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">elif</span></code>는 ‘else if’의 줄임말로 원하는 만큼 사용할 수 있고, <code class="docutils literal notranslate"><span class="pre">else</span></code> 문은 마지막에 한 번 사용하거나 생략할 수 있다. <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>문은 위에 위치한 조건의 참거짓부터 차례대로 조사하며, 한 곳에서 만족되면 나머지 부분은 무시한다.</p>
+<p>예를 들어, <code class="docutils literal notranslate"><span class="pre">x</span></code>가 <code class="docutils literal notranslate"><span class="pre">y</span></code>보다 큰지 작은지 같은지를 출력하는 코드를 다중 조건문으로 작성해보자.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 작다&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 크다&#39;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x와 y가 같다&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>위 조건문이 실행되는 순간 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 <code class="docutils literal notranslate"><span class="pre">y</span></code>가 가리키는 값보다 작으면 <code class="docutils literal notranslate"><span class="pre">x가</span> <span class="pre">y보다</span> <span class="pre">작다</span></code>를 출력하며 나머지 부분은 무시하고, <code class="docutils literal notranslate"><span class="pre">x</span></code>가 <code class="docutils literal notranslate"><span class="pre">y</span></code>보다 크면 <code class="docutils literal notranslate"><span class="pre">x가</span> <span class="pre">y보다</span> <span class="pre">크다</span></code>를 출력하고 나머지 부분은 무시한다. 두 조건을 모두 만족하지 않으면 <code class="docutils literal notranslate"><span class="pre">else</span></code> 아래 코드가 실행된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 작다&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 크다&#39;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x와 y가 같다&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x가 y보다 작다
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 작다&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 크다&#39;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x와 y가 같다&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x가 y보다 크다
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 작다&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 크다&#39;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x와 y가 같다&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x와 y가 같다
+</pre></div>
+</div>
+</div>
+</div>
+<div class="proof example admonition" id="cond_ex05">
+<p class="admonition-title"><span class="caption-number">Example 1.5 </span></p>
+<div class="example-content section" id="proof-content">
+<p>변수<code class="docutils literal notranslate"><span class="pre">score</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">score</span></code>가 90이상이면 <code class="docutils literal notranslate"><span class="pre">A</span></code>, 80이상 90미만이면 <code class="docutils literal notranslate"><span class="pre">B</span></code>, 70이상 80미만이면 <code class="docutils literal notranslate"><span class="pre">C</span></code>, 60이상 70미만이면 <code class="docutils literal notranslate"><span class="pre">D</span></code>, 60미만은 <code class="docutils literal notranslate"><span class="pre">F</span></code>를 출력하는 코드를 작성하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">80</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">90</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">70</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">80</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">60</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">70</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">score</span></code>가 90미만일 때만 그 다음 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 조건을 확인하기 때문에 조건에 <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">90</span></code>은 생략할 수 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">else</span></code>를 사용하지 않을 수도 있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">60</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div></div>
+<div class="section" id="id5">
+<h2><span class="section-number">1.6. </span>요약<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">1.7. </span>연습 문제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>아래 문제에서 값이 주어졌다고 하면 변수에 해당 자료형의 임의의 값을 할당한다.</p>
+<div class="section" id="id7">
+<h3><span class="section-number">1.7.1. </span>문제<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>주어진 정수 <code class="docutils literal notranslate"><span class="pre">num1</span></code>이 홀수인 경우에만 그 값에 1을 더한 값을 출력하여라.</p>
+</div>
+<div class="section" id="id8">
+<h3><span class="section-number">1.7.2. </span>문제<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>주어진 정수 <code class="docutils literal notranslate"><span class="pre">num2</span></code>가 5보다 큰 경우에만 <code class="docutils literal notranslate"><span class="pre">num2</span></code>를 3으로 나누었을 때의 나머지를 출력하여라.</p>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">1.7.3. </span>문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>주어진 정수 <code class="docutils literal notranslate"><span class="pre">num3</span></code>의 값에 따라 <code class="docutils literal notranslate"><span class="pre">양수입니다.</span></code>, <code class="docutils literal notranslate"><span class="pre">음수입니다.</span></code>, <code class="docutils literal notranslate"><span class="pre">0입니다.</span></code>를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id10">
+<h3><span class="section-number">1.7.4. </span>문제<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>1종 운전면허를 취득하기 위해서는 학과시험에서 70점이상을 받아야 한다. 학과시험 점수가 주어졌을 때, 합격여부를 알려주는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id11">
+<h3><span class="section-number">1.7.5. </span>문제<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>윤년은 윤달이나 윤일이 든 해로 달력의 계절과 실제 계절의 차이를 조절하기 위해 사용한다. 윤년 규칙은 다음과 같다.</p>
+<ul class="simple">
+<li><p>4로 나누어 떨어지는 해는 윤년이다.</p></li>
+<li><p>4와 100으로 나누어 떨어지는 해는 평년이다.</p></li>
+<li><p>4와 100 그리고 400으로 나누어 떨어지는 해는 윤년이다.</p></li>
+</ul>
+<p>연도가 주어졌을 때, 윤년인지 아닌지를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id12">
+<h3><span class="section-number">1.7.6. </span>문제<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>다음 코드의 결과값이 무엇인지 말하고, 코드를 실행시켜 확인하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;강현&#39;</span>
+
+<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;강현&#39;</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;안녕하세요&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;님&#39;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">new_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;이름을 등록하세요 : &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;안녕하세요&#39;</span><span class="p">,</span> <span class="n">new_name</span><span class="p">,</span> <span class="s1">&#39;님&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;로그인되었습니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3><span class="section-number">1.7.7. </span>문제<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>다음 코드의 결과값이 무엇인지 말하고, 코드를 실행시켜 확인하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span> <span class="o">=</span> <span class="s2">&quot;banana apple orange pineapple mango strawberry cherry&quot;</span>
+
+<span class="k">if</span> <span class="s2">&quot;tomato&quot;</span> <span class="ow">in</span> <span class="n">fruit</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s2">&quot;abcd&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fruit</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s2">&quot;app&quot;</span> <span class="ow">in</span> <span class="n">fruit</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3><span class="section-number">1.7.8. </span>문제<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>다음 코드에서 오류가 발생하는 이유를 모두 말하고, 이를 수정하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span> <span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i는 5이다.&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3><span class="section-number">1.7.9. </span>문제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>다음 코드에서 오류가 발생하는 이유를 모두 말하고, 이를 수정하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">3</span> <span class="o">==</span> <span class="mf">3.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3과 3.0은 같다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3><span class="section-number">1.7.10. </span>문제<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>다음 코드에서 오류가 발생하는 이유를 모두 말하고, 이를 수정하여라.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a는 양수다.&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b는 음수다&#39;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a &gt; b 이다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3><span class="section-number">1.7.11. </span>문제<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>주어진 문자열 <code class="docutils literal notranslate"><span class="pre">weather</span></code>에 <code class="docutils literal notranslate"><span class="pre">비</span></code>가 포함되어 있다면</p>
+<blockquote>
+<div><p>오늘 비가 내립니다.<br />
+우산을 챙기세요!</p>
+</div></blockquote>
+<p>를 출력하고 그렇지 않다면</p>
+<blockquote>
+<div><p>비 소식은 없습니다.</p>
+</div></blockquote>
+<p>를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id18">
+<h3><span class="section-number">1.7.12. </span>문제<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 입력 받은 정수가 짝수인지 홀수인지를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id19">
+<h3><span class="section-number">1.7.13. </span>문제<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 두 정수를 입력 받아 작은 수를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id20">
+<h3><span class="section-number">1.7.14. </span>문제<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 세 정수를 입력 받아 가장 큰 수를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id21">
+<h3><span class="section-number">1.7.15. </span>문제<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 세 정수를 입력 받아 처음 두 정수를 더한 값이 세 번째로 입력한 정수라면 <code class="docutils literal notranslate"><span class="pre">정답입니다</span></code>를, 아니면 <code class="docutils literal notranslate"><span class="pre">오답입니다</span></code>를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id22">
+<h3><span class="section-number">1.7.16. </span>문제<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 입력 받은 정수가 주어진 정수 <code class="docutils literal notranslate"><span class="pre">answer</span></code>와 같으면 <code class="docutils literal notranslate"><span class="pre">정답입니다</span></code>를, 크면 <code class="docutils literal notranslate"><span class="pre">너무</span> <span class="pre">커요</span></code> 작으면 <code class="docutils literal notranslate"><span class="pre">너무</span> <span class="pre">작아요</span></code>를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id23">
+<h3><span class="section-number">1.7.17. </span>문제<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 정수를 입력 받아 100보다 작거나 같으면 입력 받은 수를, 100보다 크면 100을 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id24">
+<h3><span class="section-number">1.7.18. </span>문제<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p>골프는 낮은 점수가 이기고, 테니스는 높은 점수가 이기는 게임이다. 강현이와 나현이는 골프 또는 테니스 게임을 했다. 두 사람의 점수와 종목을 입력 받아 누가 이겼는지를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id25">
+<h3><span class="section-number">1.7.19. </span>문제<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>택배의 가격은 무게에 따라 달라진다. 아래는 한 택배 회사의 요금표이다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>무게(kg)</p></th>
+<th class="text-align:center head"><p>가격(원)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>5미만</p></td>
+<td class="text-align:center"><p>5,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>5이상 ~ 10미만</p></td>
+<td class="text-align:center"><p>8,000</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>10이상</p></td>
+<td class="text-align:center"><p>10,000</p></td>
+</tr>
+</tbody>
+</table>
+<p>우편물의 무게가 주어졌을 때, 택배 가격을 알려주는 프로그램을 만들어라.</p>
+</div>
+<div class="section" id="id26">
+<h3><span class="section-number">1.7.20. </span>문제<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<p>미세먼지 농도별 예보 등급은 아래와 같다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>미세먼지 농도(<span class="math notranslate nohighlight">\(\mu g / m^3\)</span>)</p></th>
+<th class="text-align:center head"><p>예보 등급</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>0 ~ 30</p></td>
+<td class="text-align:center"><p>좋음</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>31 ~ 80</p></td>
+<td class="text-align:center"><p>보통</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>81 ~ 150</p></td>
+<td class="text-align:center"><p>나쁨</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>151 ~</p></td>
+<td class="text-align:center"><p>매우나쁨</p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 현재 미세먼지 농도를 입력 받아 예보 등급을 알려주는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id27">
+<h3><span class="section-number">1.7.21. </span>문제<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<p>체질량지수<font size="2">Body Mass Inded, BMI</font>는 체중(kg)을 키(m)의 제곱으로 나눈 값으로 비만도 판정에 사용한다.</p>
+<div class="math notranslate nohighlight">
+\[BMI = \frac{몸무게}{키^2}\]</div>
+<ul class="simple">
+<li><p>단위 :</p>
+<ul>
+<li><p>몸무게 : kg</p></li>
+<li><p>키 : m</p></li>
+</ul>
+</li>
+</ul>
+<p>BMI에 따른 체중 분류는 아래와 같다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>BMI</p></th>
+<th class="text-align:center head"><p>체중 분류</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>18.5미만</p></td>
+<td class="text-align:center"><p>저체중</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>18.5이상 23미만</p></td>
+<td class="text-align:center"><p>정상</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>23이상 25미만</p></td>
+<td class="text-align:center"><p>과체중</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>25이상 30미만</p></td>
+<td class="text-align:center"><p>비만</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>30이상</p></td>
+<td class="text-align:center"><p>고도비만</p></td>
+</tr>
+</tbody>
+</table>
+<p>키와 몸무게가 주어졌을 때, BMI와 체중 분류를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id28">
+<h3><span class="section-number">1.7.22. </span>문제<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<p>A대학의 일반차량에 대한 주차요금은 아래와 같다.</p>
+<ul class="simple">
+<li><p>2,000원/최초 30분, 초과 10분마다 500원, 1일(24시간) 최대요금은 40,000원</p></li>
+</ul>
+<p>주차시간을 입력 받아 주차요금을 출력하는 코드를 작성하여라.</p>
+</div>
+</div>
+<div class="section" id="id29">
+<h2><span class="section-number">1.8. </span>[미니 프로젝트] 죄수의 딜레마<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
+<p>죄수의 딜레마<font size="2">Prisoner’s Dilemma, PD</font>은 수학자 존 내시<font size="2">John Nash</font>가 고안한 게임으로 상황은 다음과 같다.</p>
+<p>사건 용의자A, B가 체포되어 서로 다른 취조실에서 심문을 받는데 이들은 자백여부에 따라 다르게 처벌받는다.</p>
+<ul class="simple">
+<li><p>둘 중 하나만 죄를 자백하면 자백한 자는 즉시 석방되고 나머지는 10년을 복역한다.</p></li>
+<li><p>둘 다 자백하면 모두 6개월을 복역한다.</p></li>
+<li><p>둘 다 침묵하면 모두 5년을 복역한다.</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p></p></th>
+<th class="text-align:center head"><p>용의자B의 침묵</p></th>
+<th class="text-align:center head"><p>용의자B의 자백</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>용의자A의 침묵</p></td>
+<td class="text-align:center"><p>모두 6개월</p></td>
+<td class="text-align:center"><p>A는 10년, B는 석방</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>용의자A의 자백</p></td>
+<td class="text-align:center"><p>A는 석방, B는 10년</p></td>
+<td class="text-align:center"><p>모두 5년</p></td>
+</tr>
+</tbody>
+</table>
+<p>용의자A가 되어 몇 년형을 받을지 확인하는 코드를 작성해보자.</p>
+<div class="info admonition">
+<p class="admonition-title">도움말</p>
+<ul class="simple">
+<li><p>자백은 <code class="docutils literal notranslate"><span class="pre">1</span></code>, 침묵은 <code class="docutils literal notranslate"><span class="pre">0</span></code>으로 둔다.</p></li>
+<li><p>용의자A의 선택은 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 받는다.</p></li>
+<li><p>용의자B의 선택은 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 <code class="docutils literal notranslate"><span class="pre">1</span></code> 중 하나를 임의로 둔다. 아래 <code class="docutils literal notranslate"><span class="pre">random.randint(0,</span> <span class="pre">1)</span></code>는 실행할 때마다 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 <code class="docutils literal notranslate"><span class="pre">1</span></code> 중 하나를 임의로 반환한다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id30">
+<h2><span class="section-number">1.9. </span>[토이 프로젝트] 가위바위보 게임<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<p>컴퓨터와 가위바위보 게임을 한 다음 누가 이겼는지 출력하는 코드를 작성하여라.</p>
+<div class="info admonition">
+<p class="admonition-title">도움말</p>
+<ul class="simple">
+<li><p>가위는 <code class="docutils literal notranslate"><span class="pre">0</span></code>, 바위는 <code class="docutils literal notranslate"><span class="pre">1</span></code>, 보는 <code class="docutils literal notranslate"><span class="pre">2</span></code>로 둔다.</p></li>
+<li><p>컴퓨터가 내는 값은 <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code> 중 하나를 임의로 둔다. 아래 <code class="docutils literal notranslate"><span class="pre">random.randint(0,</span> <span class="pre">2)</span></code>는 실행할 때마다 <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code> 중 하나를 임의로 반환한다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>가위(<code class="docutils literal notranslate"><span class="pre">0</span></code>)는 보(<code class="docutils literal notranslate"><span class="pre">2</span></code>)를, 보(<code class="docutils literal notranslate"><span class="pre">2</span></code>)는 바위(<code class="docutils literal notranslate"><span class="pre">1</span></code>)를, 바위(<code class="docutils literal notranslate"><span class="pre">1</span></code>)는 가위(<code class="docutils literal notranslate"><span class="pre">0</span></code>)를 이긴다. 내가 낸 값에 2를 더한 다음 3으로 나눈 나머지가 상대가 낸 값과 같다면 게임에서 이긴다.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">소개</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By HJ & codingalzi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
