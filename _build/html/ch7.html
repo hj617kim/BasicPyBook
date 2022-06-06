@@ -783,7 +783,7 @@
 </div>
 <div class="section" id="id3">
 <h2><span class="section-number">1.4. </span>중첩 조건문<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문을 중첩해서 사용하면 원하는 대로 경우를 나누어서 처리할 수 있다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">x</span></code>가 <code class="docutils literal notranslate"><span class="pre">y</span></code>보다 큰지 작은지 같은지를 출력하는 코드를 다음과 같이 작성할 수 있다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문을 중첩해서 사용하면 원하는 대로 경우를 나눠서 처리할 수 있다. 예를 들어, <code class="docutils literal notranslate"><span class="pre">x</span></code>가 <code class="docutils literal notranslate"><span class="pre">y</span></code>보다 큰지 작은지 같은지를 출력하는 코드를 다음과 같이 작성할 수 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x가 y보다 작다&#39;</span><span class="p">)</span>
 <span class="k">else</span> <span class="p">:</span>
@@ -794,7 +794,7 @@
 </pre></div>
 </div>
 <p>위의 중첩 조건문은 바깥 쪽에 위치한 조건<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code>을 확인한 다음 조건이 거짓일 경우 <code class="docutils literal notranslate"><span class="pre">else</span></code> 아래있는 조건<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code>를 확인한다.</p>
-<p>중첩 조건문을 사용하면 많이 코드가 복잡해질 수 있기 때문에 가능하면 사용하지 않는 것이 좋다. 예를 들어, 아래 코드는 중첩 조건문을 사용해 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 크면서 동시에 10보다 작은 경우를 다룬다.</p>
+<p>중첩 조건문을 많이 사용하면 코드가 복잡해질 수 있기 때문에 가능하면 사용하지 않는 것이 좋다. 예를 들어, 아래 코드는 중첩 조건문을 사용해 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 크면서 동시에 10보다 작은 경우를 다룬다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 0보다 크고 10보다 작다&#39;</span><span class="p">)</span>
@@ -941,7 +941,7 @@
 <h2><span class="section-number">1.6. </span>요약<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>조건문은 특정 조건의 성립여부에 따라 다른 일을 하게 만드는 명령문이다.</p>
 <ul class="simple">
-<li><p>특정 <code class="docutils literal notranslate"><span class="pre">조건</span></code>이 참일 때만 그 아래 들여쓰기된 <code class="docutils literal notranslate"><span class="pre">코드</span></code> 실행된다.</p></li>
+<li><p>특정 <code class="docutils literal notranslate"><span class="pre">조건</span></code>이 참일 때만 그 아래 들여쓰기된 <code class="docutils literal notranslate"><span class="pre">코드</span></code>가 실행된다.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건</span> <span class="p">:</span>
     <span class="n">코드</span>
@@ -970,7 +970,7 @@
 </div>
 <div class="section" id="id8">
 <h3><span class="section-number">1.7.2. </span>문제<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>주어진 정수 <code class="docutils literal notranslate"><span class="pre">num2</span></code>가 5보다 큰 경우에만 <code class="docutils literal notranslate"><span class="pre">num2</span></code>를 3으로 나누었을 때의 나머지를 출력하라.</p>
+<p>주어진 정수 <code class="docutils literal notranslate"><span class="pre">num2</span></code>가 5보다 큰 경우에만 <code class="docutils literal notranslate"><span class="pre">num2</span></code>를 3으로 나눴을 때의 나머지를 출력하라.</p>
 </div>
 <div class="section" id="id9">
 <h3><span class="section-number">1.7.3. </span>문제<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
@@ -1219,7 +1219,7 @@
 <ul class="simple">
 <li><p>자백은 <code class="docutils literal notranslate"><span class="pre">1</span></code>, 침묵은 <code class="docutils literal notranslate"><span class="pre">0</span></code>으로 둔다.</p></li>
 <li><p>용의자A의 선택은 <code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 받는다.</p></li>
-<li><p>용의자B의 선택은 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 <code class="docutils literal notranslate"><span class="pre">1</span></code> 중 하나를 임의로 둔다. 아래 <code class="docutils literal notranslate"><span class="pre">random.randint(0,</span> <span class="pre">1)</span></code>는 실행할 때마다 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 <code class="docutils literal notranslate"><span class="pre">1</span></code> 중 하나를 임의로 반환한다.</p></li>
+<li><p>용의자B의 선택은 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 <code class="docutils literal notranslate"><span class="pre">1</span></code> 중 하나를 임의로 둔다. 아래 <code class="docutils literal notranslate"><span class="pre">random.randint(0,</span> <span class="pre">1)</span></code>은 실행할 때마다 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 <code class="docutils literal notranslate"><span class="pre">1</span></code> 중 하나를 임의로 반환한다.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
