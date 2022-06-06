@@ -360,15 +360,20 @@
      1.7.22. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     1.7.23. 문제
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id29">
+  <a class="reference internal nav-link" href="#id30">
    1.8. [미니 프로젝트] 죄수의 딜레마
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id30">
+  <a class="reference internal nav-link" href="#id31">
    1.9. [토이 프로젝트] 가위바위보 게임
   </a>
  </li>
@@ -549,15 +554,20 @@
      1.7.22. 문제
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     1.7.23. 문제
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id29">
+  <a class="reference internal nav-link" href="#id30">
    1.8. [미니 프로젝트] 죄수의 딜레마
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id30">
+  <a class="reference internal nav-link" href="#id31">
    1.9. [토이 프로젝트] 가위바위보 게임
   </a>
  </li>
@@ -585,7 +595,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수다&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>위 조건문이 실행되는 순간 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 0보다 작으면 <code class="docutils literal notranslate"><span class="pre">x는</span> <span class="pre">음수다</span></code>를 출력하고, 그렇지 않으면 다음 명령문으로 넘어간다.</p>
+<p>위 조건문이 실행되는 순간 변수 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 가리키는 값이 0보다 작으면 <code class="docutils literal notranslate"><span class="pre">x는</span> <span class="pre">음수다</span></code>를 출력하고, 그렇지 않으면 들여쓰기한 코드는 건너뛰고 다음 명령문으로 넘어간다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
@@ -644,7 +654,7 @@
 <div class="proof example admonition" id="cond_ex01">
 <p class="admonition-title"><span class="caption-number">Example 1.1 </span></p>
 <div class="example-content section" id="proof-content">
-<p>변수<code class="docutils literal notranslate"><span class="pre">score</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">score</span></code>가 80이상이면 <code class="docutils literal notranslate"><span class="pre">합격입니다.</span></code>를 출력하는 코드를 작성하여라.</p>
+<p>변수 <code class="docutils literal notranslate"><span class="pre">score</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">score</span></code>가 80이상이면 <code class="docutils literal notranslate"><span class="pre">합격입니다.</span></code>를 출력하는 코드를 작성하여라.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">score</span> <span class="o">=</span> <span class="mi">95</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">:</span>
 <span class="go">        print(&#39;합격입니다.&#39;)</span>
@@ -662,14 +672,14 @@
 <span class="go">7 의 제곱 : 49</span>
 </pre></div>
 </div>
-<p>정수 <code class="docutils literal notranslate"><span class="pre">1</span></code>은 <code class="docutils literal notranslate"><span class="pre">True</span></code>라 아래와 같이 코드를 작성할 수도 있다.</p>
+<p>정수 <code class="docutils literal notranslate"><span class="pre">1</span></code>은 <code class="docutils literal notranslate"><span class="pre">True</span></code>로 간주되기에 아래와 같이 코드를 작성할 수도 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">:</span>
 <span class="go">        print(n,&#39;의 제곱 :&#39;, n ** 2)</span>
 <span class="go">7 의 제곱 : 49</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">n</span></code>의 제곱을 계산한 다음 그 결과를 출력할 수도 있다. <code class="docutils literal notranslate"><span class="pre">if</span></code>조건이 참일 때 실행할 여러 줄의 코드는 들여쓰기 깊이가 같아야 한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">n</span></code>의 제곱을 계산한 다음 그 결과를 출력할 수도 있다. <code class="docutils literal notranslate"><span class="pre">if</span></code> 조건이 참일 때 실행할 여러 줄의 코드는 들여쓰기 깊이가 같아야 한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">:</span>
 <span class="go">        result = n ** 2</span>
@@ -680,7 +690,7 @@
 </div>
 </div><div class="info admonition">
 <p class="admonition-title">코드 블록<font size="2">code block</font>    </p>
-<p>프로그래밍에서 코드 블록은 특정한 일을 수행하는 한 단위의 코드 묶음을 말한다. 보통 중괄호(<code class="docutils literal notranslate"><span class="pre">{}</span></code>)로 묶여 있는 경우가 많으나 파이썬에서는 들여쓰기로 코드 블록을 지정한다.</p>
+<p>프로그래밍에서 코드 블록은 특정한 일을 수행하는 한 단위의 코드 묶음을 말한다. 많은 프로그래밍 언어에서 중괄호(<code class="docutils literal notranslate"><span class="pre">{}</span></code>)로 묶여 있는 경우가 많으나 파이썬에서는 들여쓰기로 코드 블록을 지정한다.</p>
 </div>
 <div class="proof example admonition" id="cond_ex03">
 <p class="admonition-title"><span class="caption-number">Example 1.3 </span></p>
@@ -707,7 +717,7 @@
 </div></div>
 <div class="section" id="if-else">
 <h2><span class="section-number">1.2. </span><code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문<a class="headerlink" href="#if-else" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문은 조건이 참이면 <code class="docutils literal notranslate"><span class="pre">코드1</span></code>을 실행하고, 거짓이면 <code class="docutils literal notranslate"><span class="pre">코드2</span></code>을 실행한다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문은 조건이 참이면 <code class="docutils literal notranslate"><span class="pre">코드1</span></code>을 실행하고, 거짓이면 <code class="docutils literal notranslate"><span class="pre">코드2</span></code>를 실행한다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건</span> <span class="p">:</span>
     <span class="n">코드1</span>
 <span class="k">else</span> <span class="p">:</span>
@@ -722,7 +732,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 음수 아님&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>위 조건문은 조건을 한 번만 확인하기 때문에 <a class="reference internal" href="#cond_ex03">Example 1.3</a>에서 <code class="docutils literal notranslate"><span class="pre">if</span></code>문을 두 번 사용한 코드보다 더 효율적으로 동작한다.</p>
+<p>위 조건문은 조건을 한 번만 확인하기 때문에 <a class="reference internal" href="#cond_ex03">Example 1.3</a>에서 <code class="docutils literal notranslate"><span class="pre">if</span></code>문을 두 번 사용한 코드보다 효율적으로 동작한다.</p>
 <div class="proof example admonition" id="cond_ex04">
 <p class="admonition-title"><span class="caption-number">Example 1.4 </span></p>
 <div class="example-content section" id="proof-content">
@@ -740,7 +750,7 @@
 <div class="section" id="id2">
 <h2><span class="section-number">1.3. </span>조건부 표현식<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>조건부 표현식<font size="2">conditional expression</font>은 <code class="docutils literal notranslate"><span class="pre">if-else</span></code> 조건문을 한 줄로 표현하는 방법으로 형식은 다음과 같다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">조건이</span> <span class="n">참일</span> <span class="n">때</span> <span class="n">실행할</span> <span class="n">코드</span> <span class="k">if</span> <span class="n">조건</span> <span class="k">else</span> <span class="n">조건이</span> <span class="n">거짓일</span> <span class="n">때</span> <span class="n">실행할</span> <span class="n">코드</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">표현식1</span> <span class="k">if</span> <span class="n">조건</span> <span class="k">else</span> <span class="n">표현식2</span>
 </pre></div>
 </div>
 <p>예를 들어, 변수 <code class="docutils literal notranslate"><span class="pre">a</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">a</span></code>의 절댓값을 출력하는 코드를 조건부 표현식으로 작성해보자.</p>
@@ -784,15 +794,13 @@
 </pre></div>
 </div>
 <p>위의 중첩 조건문은 바깥 쪽에 위치한 조건<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code>을 확인한 다음 조건이 거짓일 경우 <code class="docutils literal notranslate"><span class="pre">else</span></code> 아래있는 조건<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code>를 확인한다.</p>
-<div class="info admonition">
-<p class="admonition-title">참고</p>
-<p>중첩 조건문을 사용하면 코드가 금방 복잡해질 수 있기 때문에 일반적으로 권장하지 않는다. 논리 연산자를 사용해 중첩 조건문의 사용을 피할 수 있다. 아래 코드는 중첩 조건문을 사용해 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 크면서 동시에 10보다 작은 경우를 다룬다.</p>
+<p>중첩 조건문을 사용하면 많이 코드가 복잡해질 수 있기 때문에 가능하면 사용하지 않는 것이 좋다. 예를 들어, 아래 코드는 중첩 조건문을 사용해 <code class="docutils literal notranslate"><span class="pre">x</span></code>가 0보다 크면서 동시에 10보다 작은 경우를 다룬다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 0보다 크고 10보다 작다&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>와 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>을 모두 만족하는 경우에만 실행되기에 아래와 같이 <code class="docutils literal notranslate"><span class="pre">and</span></code> 연산자를 이용하면 조건문을 중첩해 사용할 필요가 없다.</p>
+<p>하지만 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수가 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>와 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>을 모두 만족하는 경우에만 실행되기에 아래와 같이 <code class="docutils literal notranslate"><span class="pre">and</span></code> 연산자를 이용하면 중첩 조건문을 사용하지 않아도 된다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 0보다 크고 10보다 작다&#39;</span><span class="p">)</span>
 </pre></div>
@@ -801,7 +809,6 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x는 0보다 크고 10보다 작다&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="id4">
@@ -889,7 +896,7 @@
 <div class="proof example admonition" id="cond_ex05">
 <p class="admonition-title"><span class="caption-number">Example 1.5 </span></p>
 <div class="example-content section" id="proof-content">
-<p>변수<code class="docutils literal notranslate"><span class="pre">score</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">score</span></code>가 90이상이면 <code class="docutils literal notranslate"><span class="pre">A</span></code>, 80이상 90미만이면 <code class="docutils literal notranslate"><span class="pre">B</span></code>, 70이상 80미만이면 <code class="docutils literal notranslate"><span class="pre">C</span></code>, 60이상 70미만이면 <code class="docutils literal notranslate"><span class="pre">D</span></code>, 60미만은 <code class="docutils literal notranslate"><span class="pre">F</span></code>를 출력하는 코드를 작성하여라.</p>
+<p>변수 <code class="docutils literal notranslate"><span class="pre">score</span></code>에 임의의 정수를 할당한 다음 <code class="docutils literal notranslate"><span class="pre">score</span></code>가 90이상이면 <code class="docutils literal notranslate"><span class="pre">A</span></code>, 80이상 90미만이면 <code class="docutils literal notranslate"><span class="pre">B</span></code>, 70이상 80미만이면 <code class="docutils literal notranslate"><span class="pre">C</span></code>, 60이상 70미만이면 <code class="docutils literal notranslate"><span class="pre">D</span></code>, 60미만은 <code class="docutils literal notranslate"><span class="pre">F</span></code>를 출력하는 코드를 작성하여라.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="mi">80</span> <span class="o">&lt;=</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">90</span> <span class="p">:</span>
@@ -902,7 +909,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">score</span></code>가 90미만일 때만 그 다음 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 조건을 확인하기 때문에 조건에 <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">90</span></code>은 생략할 수 있다.</p>
+<p>그런데 <code class="docutils literal notranslate"><span class="pre">score</span></code>가 90미만일 때만 그 다음 <code class="docutils literal notranslate"><span class="pre">elif</span></code> 조건을 확인하기 때문에 조건에 <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">90</span></code>은 생략할 수 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">:</span>
@@ -915,7 +922,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">else</span></code>를 사용하지 않을 수도 있다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>문에서 <code class="docutils literal notranslate"><span class="pre">else</span></code>를 사용하지 않을 수도 있다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">:</span>
@@ -932,10 +939,31 @@
 </div></div>
 <div class="section" id="id5">
 <h2><span class="section-number">1.6. </span>요약<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>조건문은 특정 조건의 성립여부에 따라 다른 일을 하게 만드는 명령문이다.</p>
+<ul class="simple">
+<li><p>특정 <code class="docutils literal notranslate"><span class="pre">조건</span></code>이 참일 때만 그 아래 들여쓰기된 <code class="docutils literal notranslate"><span class="pre">코드</span></code> 실행된다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건</span> <span class="p">:</span>
+    <span class="n">코드</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code>는 원하는 만큼 사용할 수 있고 <code class="docutils literal notranslate"><span class="pre">else</span></code>는 마지막에 한 번 사용하거나 생략한다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>위에 위치한 조건의 참거짓부터 조사하며 처음으로 참인 조건 아래 코드가 실행되고 나머지는 무시된다.</p></li>
+</ul>
 </div>
 <div class="section" id="id6">
 <h2><span class="section-number">1.7. </span>연습 문제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>아래 문제에서 값이 주어졌다고 하면 변수에 해당 자료형의 임의의 값을 할당한다.</p>
 <div class="section" id="id7">
 <h3><span class="section-number">1.7.1. </span>문제<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>주어진 정수 <code class="docutils literal notranslate"><span class="pre">num1</span></code>이 홀수인 경우에만 그 값에 1을 더한 값을 출력하여라.</p>
@@ -1058,14 +1086,18 @@
 </div>
 <div class="section" id="id23">
 <h3><span class="section-number">1.7.17. </span>문제<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 정수를 입력 받아 100보다 작거나 같으면 입력 받은 수를, 100보다 크면 100을 출력하는 코드를 작성하여라.</p>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 두 분수 A, B의 분자와 분모에 해당하는 정수를 입력 받아 어느 분수가 더 큰지를 출력하는 코드를 작성하여라.</p>
 </div>
 <div class="section" id="id24">
 <h3><span class="section-number">1.7.18. </span>문제<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
-<p>골프는 낮은 점수가 이기고, 테니스는 높은 점수가 이기는 게임이다. 강현이와 나현이는 골프 또는 테니스 게임을 했다. 두 사람의 점수와 종목을 입력 받아 누가 이겼는지를 출력하는 코드를 작성하여라.</p>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 정수를 입력 받아 100보다 작거나 같으면 입력 받은 수를, 100보다 크면 100을 출력하는 코드를 작성하여라.</p>
 </div>
 <div class="section" id="id25">
 <h3><span class="section-number">1.7.19. </span>문제<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>골프는 낮은 점수가 이기고, 테니스는 높은 점수가 이기는 게임이다. 강현이와 나현이는 골프 또는 테니스 게임을 했다. 두 사람의 점수와 종목을 입력 받아 누가 이겼는지를 출력하는 코드를 작성하여라.</p>
+</div>
+<div class="section" id="id26">
+<h3><span class="section-number">1.7.20. </span>문제<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
 <p>택배의 가격은 무게에 따라 달라진다. 아래는 한 택배 회사의 요금표이다.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1087,8 +1119,8 @@
 </table>
 <p>우편물의 무게가 주어졌을 때, 택배 가격을 알려주는 프로그램을 만들어라.</p>
 </div>
-<div class="section" id="id26">
-<h3><span class="section-number">1.7.20. </span>문제<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h3><span class="section-number">1.7.21. </span>문제<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
 <p>미세먼지 농도별 예보 등급은 아래와 같다.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1113,19 +1145,11 @@
 </table>
 <p><code class="docutils literal notranslate"><span class="pre">input()</span></code> 함수로 현재 미세먼지 농도를 입력 받아 예보 등급을 알려주는 코드를 작성하여라.</p>
 </div>
-<div class="section" id="id27">
-<h3><span class="section-number">1.7.21. </span>문제<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
-<p>체질량지수<font size="2">Body Mass Inded, BMI</font>는 체중(kg)을 키(m)의 제곱으로 나눈 값으로 비만도 판정에 사용한다.</p>
+<div class="section" id="id28">
+<h3><span class="section-number">1.7.22. </span>문제<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<p>체질량지수<font size="2">Body Mass Index</font>(BMI)는 체중(kg)을 키(m)의 제곱으로 나눈 값으로 비만도 판정에 사용한다.</p>
 <div class="math notranslate nohighlight">
 \[BMI = \frac{몸무게}{키^2}\]</div>
-<ul class="simple">
-<li><p>단위 :</p>
-<ul>
-<li><p>몸무게 : kg</p></li>
-<li><p>키 : m</p></li>
-</ul>
-</li>
-</ul>
 <p>BMI에 따른 체중 분류는 아래와 같다.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1153,8 +1177,8 @@
 </table>
 <p>키와 몸무게가 주어졌을 때, BMI와 체중 분류를 출력하는 코드를 작성하여라.</p>
 </div>
-<div class="section" id="id28">
-<h3><span class="section-number">1.7.22. </span>문제<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id29">
+<h3><span class="section-number">1.7.23. </span>문제<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
 <p>A대학의 일반차량에 대한 주차요금은 아래와 같다.</p>
 <ul class="simple">
 <li><p>2,000원/최초 30분, 초과 10분마다 500원, 1일(24시간) 최대요금은 40,000원</p></li>
@@ -1162,9 +1186,9 @@
 <p>주차시간을 입력 받아 주차요금을 출력하는 코드를 작성하여라.</p>
 </div>
 </div>
-<div class="section" id="id29">
-<h2><span class="section-number">1.8. </span>[미니 프로젝트] 죄수의 딜레마<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
-<p>죄수의 딜레마<font size="2">Prisoner’s Dilemma, PD</font>은 수학자 존 내시<font size="2">John Nash</font>가 고안한 게임으로 상황은 다음과 같다.</p>
+<div class="section" id="id30">
+<h2><span class="section-number">1.8. </span>[미니 프로젝트] 죄수의 딜레마<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<p>죄수의 딜레마<font size="2">Prisoner’s Dilemma</font>은 수학자 존 내시<font size="2">John Nash</font>가 고안한 게임으로 상황은 다음과 같다.</p>
 <p>사건 용의자A, B가 체포되어 서로 다른 취조실에서 심문을 받는데 이들은 자백여부에 따라 다르게 처벌받는다.</p>
 <ul class="simple">
 <li><p>둘 중 하나만 죄를 자백하면 자백한 자는 즉시 석방되고 나머지는 10년을 복역한다.</p></li>
@@ -1203,8 +1227,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id30">
-<h2><span class="section-number">1.9. </span>[토이 프로젝트] 가위바위보 게임<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id31">
+<h2><span class="section-number">1.9. </span>[토이 프로젝트] 가위바위보 게임<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
 <p>컴퓨터와 가위바위보 게임을 한 다음 누가 이겼는지 출력하는 코드를 작성하여라.</p>
 <div class="info admonition">
 <p class="admonition-title">도움말</p>
